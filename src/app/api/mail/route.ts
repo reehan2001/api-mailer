@@ -1,12 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+
 import * as nodemailer from 'nodemailer'; 
 
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: Request, res: Response) {
     return new Response(`Get method is not allowed for this end point`);
 }
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: Request, res: Response) {
   try {
     console.log(req.body)
     const { email, subject, message } = await req.json();
